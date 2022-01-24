@@ -7,8 +7,10 @@ import{
   Route
 } from "react-router-dom"
 
-import { Home } from './Components/Home';
+import Survey, { Home } from './Components/Survey';
 import Location from './Components/Location';
+import StarPlanets from './Components/StarPlanets';
+import StarPeople from './Components/StarPeople';
 
 
 
@@ -18,31 +20,23 @@ function App() {
   <BrowserRouter>
 
         <Switch>
-
-          <Route path="/home">
-            <Home/>   
-          </Route>
-          
-
-
-
-        </Switch>
-        
-        <Switch>
-          <Route path="/:city/:coloritem/:backcolor">
-            <Location />
-          </Route>
-        </Switch>
-        
-        <Switch>
-          <Route path="/:city/:coloritem">
-            <Location />
+          <Route path="/">
+            <Survey/>   
           </Route>
         </Switch>
 
+
         <Switch>
-          <Route path="/:city/">
-            <Location />
+          <Route path="/planets/:id">
+            <StarPlanets />
+          </Route>
+        </Switch>
+
+
+
+        <Switch>
+          <Route path="/people/:id">
+            <StarPeople />
           </Route>
         </Switch>
 
